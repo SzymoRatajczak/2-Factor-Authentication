@@ -3,15 +3,18 @@
 //to implement Authy in Expres server i use  command:  npm install Authy --save 
 //as well as npm install body-parser --save
 
+
+//require means download module from Node_Js server
 var express=require('express'),
 app=express(),
+  //bodyParser module allows us read POST data  
 bodyPraser=require('body-parser'),
 authy=require('authy')('Here Authy Production API Key');//this key is obtaines when we create our application on the site 
 
-//to support JSON encoded bodies
+//bodyParser-read POST data which are in JSON format
 app.use(bodyPraser.json());
 
-//to support url encoded bodies
+//read POST data in url encoded format
 app.use(bodyPraser.urlendcoded({extended:true}));
 
 //we set up above  in order to be able handle JSON and URL endcoded objects which we need to parse from our requests later
