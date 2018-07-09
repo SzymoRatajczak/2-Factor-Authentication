@@ -1,6 +1,7 @@
 //Route in application to handle user's registration
 
-//register new user via provided e-mail and phone number
+//send data via POST metod to  register function
+//register is an endpoint 
 app.post('/register',function(req,res)
 {
 	var email=req.body.email;
